@@ -1,0 +1,4 @@
+# replace all "?" by ""
+# replace all "None" by ""
+# delete column "weight" because 100% empty
+# delete column "max_glu_serum" because 95% empty
