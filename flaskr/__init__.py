@@ -2,7 +2,6 @@ import os
 
 from flask import Flask
 
-
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -24,9 +23,22 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    # There will be a blueprint for each page
+
+    from . import index
+    app.register_blueprint(index.bp)
+    app.add_url_rule('/', endpoint='index')
+
+    from . import analysis
+    app.register_blueprint(analysis.bp)
+    #app.add_url_rule('/', endpoint='analysis')
+
+    from . import conclusions
+    app.register_blueprint(conclusions.bp)
+    #app.add_url_rule('/', endpoint='conclusions')
+
+    from . import predictions
+    app.register_blueprint(predictions.bp)
+    #app.add_url_rule('/', endpoint='predictions')
 
     return app
