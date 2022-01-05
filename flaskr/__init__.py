@@ -33,12 +33,12 @@ def create_app(test_config=None):
     app.register_blueprint(analysis.bp)
     #app.add_url_rule('/', endpoint='analysis')
 
-    from . import conclusions
-    app.register_blueprint(conclusions.bp)
-    #app.add_url_rule('/', endpoint='conclusions')
+    from . import model
+    app.register_blueprint(model.bp)
+    #app.add_url_rule('/', endpoint='model')
 
-    from . import predictions
-    app.register_blueprint(predictions.bp)
+    from . import prediction
+    app.register_blueprint(prediction.bp)
     #app.add_url_rule('/', endpoint='predictions')
 
     return app
