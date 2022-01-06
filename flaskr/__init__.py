@@ -2,7 +2,7 @@ import os
 
 from flask import Flask
 
-BEST_MODEL = 'SVC'
+BEST_MODEL = 'SupportVector'
 
 def create_app(test_config=None):
     # create and configure the app
@@ -30,16 +30,10 @@ def create_app(test_config=None):
     app.register_blueprint(index.bp)
     app.add_url_rule('/', endpoint='index')
 
-    from . import analysis
-    app.register_blueprint(analysis.bp)
-    #app.add_url_rule('/', endpoint='analysis')
-
-    from . import model
-    app.register_blueprint(model.bp)
-    #app.add_url_rule('/', endpoint='model')
+    from . import restrictions
+    app.register_blueprint(restrictions.bp)
 
     from . import prediction
     app.register_blueprint(prediction.bp)
-    #app.add_url_rule('/', endpoint='predictions')
 
     return app

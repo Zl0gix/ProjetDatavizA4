@@ -9,9 +9,7 @@
     Diabetes 130-US hospitals for years 1999-2008 Data Set</a>
   </p>
   <p>
-    Go to page <a href="{{ url_for('analysis.analysis') }}">Analysis</a> to see our data visualisation work and <a href="{{ url_for('model.model') }}">Model</a> to see how we created a model that guesses whether a patient will be readmitted in an hospital depending of a series of parameter
-  </p>
-  <p>
-    To use our provided API, go to page <a href="{{ url_for('prediction.prediction') }}?test=1">prediction</a> using the URL to pass parameters like this <a href="{{ url_for('prediction.prediction') }}">example</a> <!--Change the example !!!-->
+    To use our provided API, go to page <a href="{{ url_for('prediction.prediction') }}">prediction</a> using the URL to pass parameters like this <a href="{{ url_for('prediction.prediction') }}?gender=0.0&age=6.0&admission_type_id=3.0&discharge_disposition_id=6.0&admission_source_id=1.0&time_in_hospital=7.0&medical_specialty=-1.0&num_lab_procedures=49.0&num_procedures=5.0&num_medications=37.0&number_outpatient=0.0&number_emergency=0.0&number_inpatient=0.0&diag_1=296.0&diag_2=308.0&diag_3=379.0&number_diagnoses=9.0&A1Cresult=-1.0&metformin=1.0&repaglinide=0.0&nateglinide=0.0&chlorpropamide=0.0&glimepiride=0.0&acetohexamide=0.0&glipizide=0.0&glyburide=0.0&tolbutamide=0.0&pioglitazone=1.0&rosiglitazone=0.0&acarbose=0.0&miglitol=0.0&troglitazone=0.0&tolazamide=0.0&examide=0.0&citoglipton=0.0&insulin=3.0&glyburide-metformin=0.0&glipizide-metformin=0.0&glimepiride-pioglitazone=0.0&metformin-rosiglitazone=0.0&metformin-pioglitazone=0.0&change=0.0&diabetesMed=1.0">example</a>
+    Certain data have restrictions because of the way we trained our models. See page <a href="{{ url_for('restrictions.restrictions') }}">Restrictions</a>. you must also add a "to_format" parameter to the query if you make a request with external data
   </p>
 {% endblock %}
